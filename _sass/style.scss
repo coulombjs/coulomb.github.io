@@ -1,0 +1,58 @@
+html, body {
+  height: 100%;
+}
+
+$bigscreenBreakpoint: 1000px;
+$sidePadding: 2rem;
+
+.stack {
+  padding: 0 $sidePadding;
+
+  @media screen and (min-width: $bigscreenBreakpoint) {
+    box-sizing: border-box;
+    width: $bigscreenBreakpoint;
+    margin: 0 auto;
+  }
+}
+
+body {
+  padding: 0;
+  font-family: sans-serif;
+  line-height: 1.4;
+  display: flex;
+  flex-flow: column nowrap;
+
+  > header {
+    .contents {
+      @extend .stack;
+
+      flex-shrink: 0;
+      display: flex;
+      flex-flow: row nowrap;
+
+      .site-title {
+        font-size: 200%;
+        color: grey;
+      }
+    }
+  }
+
+  > main {
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+
+    > section {
+      display: flex;
+      flex-flow: column nowrap;
+
+      > header, > .contents {
+        @extend .stack;
+      }
+    }
+  }
+
+  > footer {
+    flex-shrink: 0;
+  }
+}
