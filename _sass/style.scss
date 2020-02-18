@@ -49,10 +49,19 @@ body {
       > header, > .contents {
         @extend .stack;
       }
+      > header h2 {
+        font-weight: normal;
+        margin: 0;
+        margin-top: 1rem;
+      }
     }
   }
 
   > footer {
     flex-shrink: 0;
   }
+}
+
+.screenshot {
+  width: 100%;
 }
